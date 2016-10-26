@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度皮肤</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url(image/1.jpg) no-repeat;
+        }
+        .box {
+            height: 180px;
+            background: rgba(255,255,255,0.5);
+            text-align: center;
+            padding-top: 50px;
+        }
+        img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <img src="image/1.jpg" width="200px" alt=""/>
+    <img src="image/2.jpg" width="200px" alt=""/>
+    <img src="image/3.jpg" width="200px" alt=""/>
+    <img src="image/4.jpg" width="200px" alt=""/>
+</div>
+
+<script>
+
+    //需求：点击图片，更换body的背景
+    //步骤：
+    //1.获取事件源
+    //2.绑定事件
+    //3.书写事件驱动程序
+
+
+    //1.获取事件源和相关元素
+    var div = document.getElementsByTagName("div")[0];
+    var imgArr = div.children;
+    var bd = document.body;
+    //2.绑定事件
+    for(var i=0;i<imgArr.length;i++){
+        imgArr[i].onmouseover = function () {
+            //3.书写事件驱动程序
+            bd.style.background = 'url('+this.src+') no-repeat';
+        }
+    }
+
+//    var str1 = "222";
+//    var aaa = "111"+str1+"333";
+</script>
+
+</body>
+</html>
